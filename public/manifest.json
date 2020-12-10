@@ -5,7 +5,7 @@
   "description": "gdynia decidim pwa app",
   "background_color": "#00aae7",
   "theme_color": "#00aae7",
-  "start_url": "/home",
+  "start_url": "/",
   "scope": "/",
   "dir": "ltr",
   "display": "standalone",
