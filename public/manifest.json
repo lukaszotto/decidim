@@ -5,7 +5,7 @@
   "description": "gdynia decidim pwa app",
   "background_color": "#00aae7",
   "theme_color": "#00aae7",
-  "start_url": "https://decidim.vercel.app/",
+  "start_url": "/sw.js",
   "scope": "/",
   "dir": "ltr",
   "display": "standalone",
