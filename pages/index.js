@@ -1,52 +1,54 @@
-import Head from "next/head";
+import React from "react";
 
-import { useQuery, gql } from "@apollo/client";
-
-export default function Home() {
-  const { loading, error, data } = useQuery(DECIDIM_VERSION);
-
+import styled from "styled-components";
+import Processes from "../components/Processes";
+import Banner from "../components/Banner";
+import Summary from "../components/Summary";
+const Home = () => {
   return (
     <div>
-      <Head>
-        <title>Gdynia decidim</title>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-        />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="description" content="Description" />
-        <meta name="keywords" content="Keywords"></meta>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="/favicon-16x16.png"
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-        />
-        <link
-          href="/favicon-32x32.png"
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-        />
-        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-        <meta name="theme-color" content="#317EFB" />
-      </Head>
-
-      <main>
-        <h1>Welcome to</h1>
-        <pre>{!error && JSON.stringify(data, null, 2)}</pre>
-      </main>
+      <Banner></Banner>
+      <PreviewSection>
+        <ContainerWrapper>
+          <h3>Welcome to the official Gdynia decidim platform</h3>
+          <h4>
+            You can see all important processes that the city is participating
+            in
+          </h4>
+        </ContainerWrapper>
+      </PreviewSection>
+      <ContainerWrapper>
+        <Summary></Summary>
+      </ContainerWrapper>
+      <ContainerWrapper>
+        <Processes></Processes>
+      </ContainerWrapper>
     </div>
   );
-}
+};
 
-const DECIDIM_VERSION = gql`
-  query getVersion {
-    decidim {
-      version
-    }
+export default Home;
+
+const PreviewSection = styled.div`
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  h3 {
+    font-size: 33px;
+    text-align: center;
+    font-weight: 400;
   }
+  h4 {
+    font-size: 21px;
+    text-align: center;
+    font-weight: 400;
+  }
+`;
+
+const ContainerWrapper = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 21px;
 `;
