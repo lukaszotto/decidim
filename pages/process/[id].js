@@ -25,7 +25,7 @@ const Process = ({ id }) => {
               <div>
                 {data.participatoryProcess.steps.map((item, index) => {
                   return (
-                    <Card>
+                    <Card key={item.id}>
                       <CardBody>
                         <Badge>
                           Phase{" "}
@@ -53,25 +53,29 @@ const Process = ({ id }) => {
             }
             <ListGroup>
               <ListGroupItem>
-                <h4>Local Area</h4>
+                <h4>Organization area</h4>
                 {data.participatoryProcess.localArea.translation || "-"}
               </ListGroupItem>
               <ListGroupItem>
-                <h4>Meta Scope</h4>
+                <h4>Promoter group</h4>
+                {data.participatoryProcess.developerGroup.translation || "-"}
+              </ListGroupItem>
+              <ListGroupItem>
+                <h4>Scope metadata</h4>
                 {data.participatoryProcess.metaScope.translation || "-"}
               </ListGroupItem>
               <ListGroupItem>
-                <h4>Participatory Scope</h4>
+                <h4>What is decided</h4>
                 {data.participatoryProcess.participatoryScope.translation ||
                   "-"}
               </ListGroupItem>
               <ListGroupItem>
-                <h4>Participatory Structure</h4>
+                <h4>How is it decided</h4>
                 {data.participatoryProcess.participatoryStructure.translation ||
                   "-"}
               </ListGroupItem>
               <ListGroupItem>
-                <h4>Target</h4>
+                <h4>Who participates</h4>
                 {data.participatoryProcess.target.translation || "-"}
               </ListGroupItem>
             </ListGroup>
@@ -128,8 +132,7 @@ const ContainerWrapper = styled.div`
 const Badge = styled.div`
   color: #fff;
   display: inline-block;
-  background-color: #12203d;
-  border-color: #12203d;
+  background-color: #008000;
   font-weight: 500;
   text-align: center;
   vertical-align: middle;
@@ -200,8 +203,13 @@ const GET_PROCESS = gql`
       target {
         translation(locale: "en")
       }
+      developerGroup {
+        translation(locale: "en")
+      }
       steps {
         id
+        endDate
+        startDate
         title {
           translation(locale: "en")
         }
