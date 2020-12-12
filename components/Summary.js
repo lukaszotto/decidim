@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import styled from "styled-components";
+import Loader from "../components/Loader";
 
 const Summary = () => {
   const { loading, error, data } = useQuery(GET_SUMMARY);
@@ -39,7 +40,7 @@ const Summary = () => {
           )}
         </CountBoxContainer>
       ) : (
-        "loading..."
+        <Loader />
       )}
     </div>
   );
@@ -61,6 +62,9 @@ const CountBox = styled.div`
   span {
     display: block;
     font-size: 50px;
+  }
+  h2 {
+    font-size: 18px;
   }
 `;
 

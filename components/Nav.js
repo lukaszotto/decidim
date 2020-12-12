@@ -30,7 +30,7 @@ const Nav = () => {
             <Link href="/">Home</Link>
           </StyledLink>
           <StyledLink>
-            <Link href="/processes">page</Link>
+            <Link href="/processes">Processes</Link>
           </StyledLink>
         </ContainerWrapper>
       </NavBar>
@@ -48,6 +48,7 @@ const TopBar = styled.div`
 
 const NavBar = styled.div`
   background-color: #f9f6f6;
+  z-index: 3;
   @media (max-width: 768px) {
     position: absolute;
     top: 90px;
@@ -93,5 +94,8 @@ const StyledLink = styled.div`
     margin-right: 0;
     margin-bottom: 13px;
     text-align: center;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 8px;
   }
 `;

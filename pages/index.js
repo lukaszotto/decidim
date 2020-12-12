@@ -4,10 +4,12 @@ import styled from "styled-components";
 import Processes from "../components/Processes";
 import Banner from "../components/Banner";
 import Summary from "../components/Summary";
+
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
+
       <PreviewSection>
         <ContainerWrapper>
           <h3>Welcome to the official Gdynia decidim platform</h3>
@@ -34,7 +36,7 @@ const PreviewSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px;
+  min-height: 200px;
   h3 {
     font-size: 33px;
     text-align: center;

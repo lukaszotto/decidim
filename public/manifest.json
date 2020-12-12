@@ -1,5 +1,5 @@
 {
-  "short_name": "gda",
+  "short_name": "Gdynia Decidim",
   "name": "gdynia-decidim",
   "lang": "pl",
   "description": "gdynia decidim pwa app",
@@ -9,7 +9,7 @@
   "scope": "https://decidim.vercel.app/",
   "dir": "ltr",
   "display": "standalone",
-  "orientation": "any",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "/icon/android-icon-192x192-dunplab-manifest-27710.jpg",

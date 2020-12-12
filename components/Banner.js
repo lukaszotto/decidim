@@ -21,7 +21,8 @@ const StyledBanner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 24px;
   color: white;
+  text-align: center;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 `;
