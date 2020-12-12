@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <ContainerWrapper>
-        <img src="./images/decidim-logo.svg" alt="decidim logo"></img>
+        <img src="/images/decidim-logo.svg" alt="decidim logo"></img>
       </ContainerWrapper>
     </StyledFooter>
   );

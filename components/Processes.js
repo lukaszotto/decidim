@@ -3,27 +3,26 @@ import { useQuery, gql } from "@apollo/client";
 import SingleProcessItem from "./SingleProcessItem";
 import styled from "styled-components";
 import Loader from "../components/Loader";
-
 const Processes = () => {
   const { loading, error, data } = useQuery(GET_PROCESSES_LIST);
+  if (loading) {
+    return <Loader></Loader>;
+  }
+  if (error) {
+    return <h2>Error while loading data...</h2>;
+  }
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Latest processes</h1>
-      {loading ? (
-        <Loader />
-      ) : (
-        <ProessesWrap>
-          {data &&
-            data.participatoryProcesses.map((item) => {
-              return (
-                <SingleProcessItem
-                  key={item.id}
-                  item={item}
-                ></SingleProcessItem>
-              );
-            })}
-        </ProessesWrap>
-      )}
+
+      <ProessesWrap>
+        {data &&
+          data.participatoryProcesses.map((item) => {
+            return (
+              <SingleProcessItem key={item.id} item={item}></SingleProcessItem>
+            );
+          })}
+      </ProessesWrap>
     </div>
   );
 };

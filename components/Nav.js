@@ -26,12 +26,12 @@ const Nav = () => {
       </TopBar>
       <NavBar menuActive={menuActive}>
         <ContainerWrapper>
-          <StyledLink>
-            <Link href="/">Home</Link>
-          </StyledLink>
-          <StyledLink>
-            <Link href="/processes">Processes</Link>
-          </StyledLink>
+          <Link href="/" role="button">
+            <StyledLink>Home</StyledLink>
+          </Link>
+          <Link href="/processes">
+            <StyledLink>processes</StyledLink>
+          </Link>
         </ContainerWrapper>
       </NavBar>
     </div>
@@ -82,13 +82,23 @@ const TopBarToggle = styled.a`
 const ContainerWrapper = styled.div`
   max-width: 1024px;
   margin: 0 auto;
-  padding: 21px;
+  @media (max-width: 768px) {
+    padding: 21px;
+  }
 `;
 
 const StyledLink = styled.div`
   display: inline-block;
   margin-right: 13px;
   text-transform: uppercase;
+  padding: 21px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  @media (min-width: 768px) {
+    &:hover {
+      border-bottom: 2px solid black;
+    }
+  }
   @media (max-width: 768px) {
     display: block;
     margin-right: 0;
